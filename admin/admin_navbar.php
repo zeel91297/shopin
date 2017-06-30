@@ -106,8 +106,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="h_nav">
 								<h4>Products</h4>
 									<ul>
-										<li><a href="products.html">Product Display </a></li>
-										<li><a href="productinsert.html">Product Insert</a></li>
+										<li><a href="products.php">Product Display </a></li>
+										<li><a href="productinsert.php">Product Insert</a></li>
 										<li><a href="product.html">Caps & Hats</a></li>
 										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
 										
@@ -116,10 +116,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu2</h4>
+								<h4>Category</h4>
 								<ul>
-										<li><a href="product.html">Jackets & Coats</a></li>
-										<li><a href="product.html">Jeans</a></li>
+										<li><a href="category.php">Category Display</a></li>
+										<li><a href="categoryinsert.php">Category Insert</a></li>
 										<li><a href="product.html">Jewellery</a></li>
 										<li><a href="product.html">Jumpers & Cardigans</a></li>
 										<li><a href="product.html">Leather Jackets</a></li>

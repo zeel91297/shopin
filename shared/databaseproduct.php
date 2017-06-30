@@ -46,16 +46,15 @@
             $res=$conn->query($sql);          
             $row=$res->fetch_assoc();
             unlink($row["prod_img"]);            
-            
             $sql="delete from product_tbl where prod_id=".$product_id;
             //echo $sql;
             $result=$conn->query($sql);
             productdb::disconnect();
             return $result;
         }
-        public function productUpdate($_pid,$_pname,$_pcolor,$_pprice,$_pmanu,$_pwarra,$_psoh,$_pimg,$_fk_cat_id){
+        public function productUpdate($_prodid,$_proname,$_proprice,$_prodmfg,$_prodcolor,$_pimg1,$_pimg2,$_pimg3,$_prodwarr,$_prodsoh,$_proddesc,$_fk_catid){
             $conn=productdb::connect();
-            $sql="update product_tbl set prod_name='".$_pname ."',prod_color='".$_pcolor ."',prod_price='".$_pprice ."',prod_manufacture='".$_pmanu ."',prod_warranty='".$_pwarra ."',prod_soh='".$_psoh ."',prod_img='".$_pimg ."',fk_cat_id='".$_fk_cat_id."' where prod_id='".$_pid ."' ";
+            $sql="update product_tbl set prod_name='".$_proname ."',prod_price='".$_proprice ."',prod_color='".$_prodcolor ."',prod_img1='".$_pimg1 ."',prod_img2='".$_pimg2 ."',prod_img3='".$_pimg3 ."',prod_mfg='".$_prodmfg ."',prod_warranty='".$_prodwarr ."',prod_soh='".$_prodsoh ."',prod_desc='".$_proddesc."',fk_cat_id='".$_fk_catid."' where prod_id='".$_prodid ."' ";
             $result=$conn->query($sql);
             productdb::disconnect();
             return $result;

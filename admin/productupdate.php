@@ -23,7 +23,7 @@
             $_pdesc=$row["prod_desc"];
             $_fk_cat_id=$row["fk_cat_id"];
         ?>
-        <form action="produpdatecode.php" method="post" class="container" enctype="multipart/form-Data">
+        <form action="produpdatecode.php?pro_id=<?php echo $_pid; ?>&img1=<?php echo $_pimg1; ?>&img2=<?php echo $_pimg2; ?>&img3=<?php echo $_pimg3; ?>" method="post" class="container" enctype="multipart/form-Data">
         <div class="row">
             <div class="form-group col-ld-10">
                 <input type="text" value="<?php echo $_pname; ?>"  class="form-control" id="text" placeholder="Enter Product Name" name="txtpname" required>
@@ -47,20 +47,16 @@
         <div class="row">
             <div class="form-group col-ld-4">
                 <label for="">Image 1:</label>
+                <img src="<?php echo $_pimg1; ?>" height="150px" width="150px"/>
             </div>
-            <div class="form-group col-ld-8">
-                <input type="file"  class="form-control" id="text" placeholder="Enter Product Image Path" name="txtpimg1" >
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-ld-10">
-            <img src="<?php echo $_pimg1; ?>" height="150px" width="150px"/>
+            <div class="form-group col-ld-8">  
             <input type="file"  class="form-control"  name="txtpimg1" >
             </div>
         </div>
         <div class="row">
             <div class="form-group col-ld-4">
                 <label for="">Image 2:</label>
+                <img src="<?php echo $_pimg2; ?>" height="150px" width="150px"/>
             </div>
             <div class="form-group col-ld-8">
                 <input type="file"  class="form-control" id="text" placeholder="Enter Product Image Path" name="txtpimg2" >
@@ -69,6 +65,7 @@
         <div class="row">
             <div class="form-group col-ld-4">
                 <label for="">Image 3:</label>
+                <img src="<?php echo $_pimg3; ?>" height="150px" width="150px"/>
             </div>
             <div class="form-group col-ld-8">
                 <input type="file"  class="form-control" id="text" placeholder="Enter Product Image Path" name="txtpimg3" >
@@ -89,7 +86,7 @@
                 <label for="">Product Detail</label>
             </div>
             <div class="form-group col-ld-8">
-                <textarea rows="5" cols="80" value="<?php echo $_pdesc; ?>" name="txtdesc"></textarea>
+                <textarea rows="5" cols="80" value="" name="txtdesc"><?php echo $_pdesc; ?></textarea>
             </div>
         </div>
         <div class="row">
@@ -101,7 +98,7 @@
                     $result=$conn->query($sql);
                     if($result->num_rows>0){
                         while($row=$result->fetch_assoc()){
-                            echo '<option value="'.$row["pk_cat_id"].'">'.$row["cat_name"].'</option>';
+                            echo '<option value="'.$row["pk_cat_id"].'"  echo ("'.$row["fk_cat_id"].'" == "'.$_fk_cat_id.'" ? selected="selected": "");>'.$row["cat_name"].'</option>';
                         }
                     }
                 ?>

@@ -9,6 +9,13 @@
             mysqli_close(self::$con);
             self::$con=NULL;
         }
+        public function productdisplay(){
+            $conn=productdb::connect();
+            $sql="select p.*,c.* from product_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id";
+            $result=$conn->query($sql);
+            productdb::disconnect();
+            return $result;
+        }
         public function getAllProducts(){
             $conn=productdb::connect();
             $sql="select * from product_tbl";
@@ -16,17 +23,24 @@
             productdb::disconnect();
             return $result;
         }
-        public function productInsert($_pname,$_pcolor,$_pprice,$_pmanu,$_pwarra,$_psoh,$_pimg1,$_pimg2,$_pimg3,$_fk_cat_id){
+        public function productInsert($_proname,$_proprice,$_prodmfg,$_prodcolor,$_pimg1,$_pimg2,$_pimg3,$_prodwarr,$_prodsoh,$_proddesc,$_fk_catid){
             $conn=productdb::connect();
             $sql="insert into product_tbl
-                (prod_name,prod_color,prod_price,prod_manufacture,prod_warranty,prod_soh,prod_img,fk_cat_id) 
-                values('".$_pname ."','".$_pcolor ."','".$_pprice ."','".$_pmanu ."','".$_pwarra ."','".$_psoh ."','".$_pimg."','".$_fk_cat_id."')";
+                (prod_name,prod_price,prod_mfg,prod_color,prod_img1,prod_img2,prod_img3,prod_warranty,prod_soh,prod_desc,fk_cat_id) 
+                values('".$_proname."','".$_proprice ."','".$_prodmfg."','".$_prodcolor."','".$_pimg1."','".$_pimg2."','".$_pimg3."','".$_prodwarr ."','".$_prodsoh."','".$_proddesc."','".$_fk_catid."')";
             $result=$conn->query($sql);
             echo $sql;
             productdb::disconnect();
             return $result;
         }
-        public function productDelete($product_id){
+        public function productDelete($all){
+            $conn=productdb::connect();
+            $sql="delete from product_tbl where prod_id IN ($all) ";
+            $res=$conn->query($sql);          
+            return $res;
+            productdb::disconnect();
+        }
+        public function productDel($product_id){
             $conn=productdb::connect();
             $sql="select * from product_tbl where prod_id='.$product_id.'";
             $res=$conn->query($sql);          

@@ -9,6 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $_prodsoh=$_POST["txtpsoh"];
     $_proddesc=$_POST["txtdesc"];
     $_fk_catid=$_POST["fk_cat_id"];
+    echo $_fk_catid;
     $_pimg1="../images/".basename($_FILES["txtpimg1"]["name"]);
     move_uploaded_file($_FILES["txtpimg1"]["tmp_name"],$_pimg1);
     $_pimg2="hi";
@@ -16,10 +17,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         //echo $_target;
         require '../shared/databaseproduct.php';
         $obj=new productdb;
-        $res=$obj->productInsert($_proname,$_proprice,$_prodmfg,$_prodcolor,$_prodwarr,$_prodsoh,$_proddesc,$_fk_catid,$_pimg1,$_pimg2,$_pimg3);
+        $res=$obj->productInsert($_proname,$_proprice,$_prodmfg,$_prodcolor,$_pimg1,$_pimg2,$_pimg3,$_prodwarr,$_prodsoh,$_proddesc,$_fk_catid);
         if($res===true){
-            //header('location:producthome.php');
-            echo "success";
+            header('location:products.php');
+            //echo "success";
         }
         else{
             echo "Not inserted";

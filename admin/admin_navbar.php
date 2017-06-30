@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.html"><img src="../images/logo.png" alt=""></a>	
+				<a href="products.php"><img src="../images/logo.png" alt=""></a>	
 			</div>
 		</div>
 	</div>
@@ -104,10 +104,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu1</h4>
+								<h4>Products</h4>
 									<ul>
-										<li><a href="product.html">Accessories</a></li>
-										<li><a href="product.html">Bags</a></li>
+										<li><a href="products.html">Product Display </a></li>
+										<li><a href="productinsert.html">Product Insert</a></li>
 										<li><a href="product.html">Caps & Hats</a></li>
 										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
 										
@@ -236,5 +236,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </nav>
 			</div>
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/simpleCart.min.js"> </script>
+<!-- slide -->
+<script src="../js/bootstrap.min.js"></script>
+<!--light-box-files -->
+		<script src="../js/jquery.chocolat.js"></script>
+		<link rel="stylesheet" href="../css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('a.picture').Chocolat();
+		});
+		</script>
+
 </body>
 </html>

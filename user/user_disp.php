@@ -1,21 +1,13 @@
 
 <html> 
 <head>
-    <script src="js/jquery-3.2.1.min.js"></script>
- <link rel="stylesheet" href="css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="js/bootstrap.min.js"></script>
     
 </head>
 <body class="container">
 <?php
     
     require 'user_navbar.php';
-    require 'database_user.php';
+    require '../shared/database_user.php';
     $obj=new user_disp();
     $res=$obj->getuser();
     $row=$res->fetch_assoc();
@@ -59,9 +51,9 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control"  name="txtold" placeholder="Enter Old Password">
-        <input type="text" class="form-control" name="txtnew" placeholder="Enter New Password">
-        <input type="text" class="form-control" name="txtnewch" placeholder="Change password">
+        <input type="password" class="form-control"  name="txtold" placeholder="Enter Old Password">
+        <input type="password" class="form-control" name="txtnew" placeholder="Enter New Password">
+        <input type="password" class="form-control" name="txtnewch" placeholder="Change password">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -1,20 +1,13 @@
 
 <html>
 <head>
-    <script src="js/jquery-3.2.1.min.js"></script>
- <link rel="stylesheet" href="css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+    
     
 </head>
 <body class="container">
 <?php
     require 'user_navbar.php';
-    require 'database_user.php';
+    require '../shared/database_user.php';
     $obj=new user_disp();
     $result=$obj->getuser();
     $row=$result->fetch_assoc();

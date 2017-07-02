@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'database_user.php';
+    require '../shared/database_user.php';
     $obj=new user_login();
 	if($_SERVER["REQUEST_METHOD"]=="POST")
     {

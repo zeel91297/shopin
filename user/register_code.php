@@ -1,5 +1,5 @@
 <?php
-include 'database_user.php';
+include '../shared/database_user.php';
 $obj=new user_sign();
 $id=$_POST["txtmail"];
 $name=$_POST["txtname"];
@@ -14,22 +14,22 @@ $rand_alpha=md5(rand());
         {
             if($_POST["gender"]=="male")
             {
-                $targerdir="images/";
+                $targerdir="../images/";
                 $targetfile=$targerdir."dboy.jpg";
             }
             else
             {
-                $targerdir="images/";
+                $targerdir="../images/";
                 $targetfile=$targerdir."dgirl.jpg";
             }
         }
         else
         {
-            $targerdir="images/";
+            $targerdir="../images/";
             $targetfile=$targerdir.basename($_FILES["pro_img"]["name"]);
             move_uploaded_file($_FILES["pro_img"]["tmp_name"],$targetfile);
         }
-        $res=$obj->insuser($id,$name,$pass,$address,$mobile,$gen,$targetfile,'user','no',$token);
+        $res=$obj->insuser($id,$name,$pass,$address,$mobile,$gen,$targetfile,'user','yes',$token);
         if($res===true)
         {
             header('location:user_login.php');

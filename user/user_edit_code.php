@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'database_user.php';
+    include '../shared/database_user.php';
     $obj=new user_disp();
     $result=$obj->getuser();
     $row=$result->fetch_assoc();
@@ -11,11 +11,11 @@
         unlink($row["profile_pic"]);
         if($row["gender"]=="male")
         {
-            $img="images/dboy.jpg";
+            $img="../images/dboy.jpg";
         }
         else
         {
-            $img="images/dboy.jpg";
+            $img="../images/dgirl.jpg";
         }
         $conn=new mysqli('localhost','root','','project_db');
         $sql="update user_tbl set profile_pic='".$img."' where pk_email_id='".$_SESSION["userid"]."'";

@@ -58,8 +58,8 @@ $id=$_SESSION["userid"];
 		  require '../shared/cart_class.php';
 		  $obj=new cart();
 		  $res=$obj->display1();
-		  while($row=$res->fetch_assoc())
-		  {
+		  $row=$res->fetch_assoc();
+		  
 		  	echo '<tr class="cart-header">';
 			 echo '<td class="ring-in"><a href="prod.php" class="at-in"><img src="'.$row["prod_img1"].'" class="img-responsive" alt=""></a>';
 			echo '<div class="sed">';
@@ -75,13 +75,15 @@ $id=$_SESSION["userid"];
 			 echo '<td> <a href="delete.php?cart_id='.$row["cart_id"].'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>&nbsp | &nbsp<a href="cart_update.php?cart_id='.$row["cart_id"].'"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a></td>';
 			//<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
 		  echo '</tr>';
-		  } 
+		   
 			 ?>
           </table>
     </div>
 </div>
 <div class="produced">
-	<a href="single.html" class="hvr-skew-backward">Produced To Buy</a>
+	<?php 
+		echo '<a href="checkouttype.php?prod_id='.$row["prod_id"].'&prod_price='.$row["prod_price"].'" class="hvr-skew-backward">Produced To Buy</a>';
+	?>
 	 </div>
 </div>
 </div>

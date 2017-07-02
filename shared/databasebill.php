@@ -24,5 +24,12 @@ class billdb{
             billdb::disconnect();
             return $result;
         }
+        public function getTotal($id){
+            $con=billdb::connect();
+            $sql="select p.*,c.*,b.*,d.* from product_tbl p,cart_tbl c,cat_tbl b,bill_tbl d where p.prod_id=c.fk_product_id AND p.fk_cat_id=b.pk_cat_id AND d.fk_prod_id=p.prod_id";
+            $result=$con->query($sql);
+            billdb::disconnect();
+            return $result;
+        }
 }
 ?>

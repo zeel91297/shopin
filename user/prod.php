@@ -38,13 +38,16 @@ include 'user_navbar.php';
 	<div class="product">
 		<div class="container">
 			<div class="col-md-9">
-				<?php
 				
-					while($row=$result->fetch_assoc())
+				
+				<div class="mid-popular">
+					<?php
+						while($row=$result->fetch_assoc())
 					{
+					echo '<div class="row">';
 				
-				echo '<div class="mid-popular">';
 					echo '<div class="col-md-4 item-grid1 simpleCart_shelfItem">';
+					
 					echo '<div class=" mid-pop">';
 					echo '<div class="pro-img">';
 						echo '<img src="'.$row["prod_img1"].'" class="img-responsive" alt="">';
@@ -75,14 +78,17 @@ include 'user_navbar.php';
 							echo '</div>';
 							
 						echo '</div>';
-					
+					echo '</div>';
+					//echo '</div>';
 					echo'</div>';
-							echo'</div>';
-				
 					}
 						?>
-			    </div>
-            </div>
+						</div>
+						</div>
+				
+					</div>
+					</div>
+			    
 </div>
 					
 </div>			
@@ -91,74 +97,6 @@ include 'user_navbar.php';
 				<!--products-->
 			
 			<!--//products-->
-<div class="col-md-3">
-			<!--categories-->
-				<div class=" rsidebar span_1_of_left">
-						<h4 class="cate">Categories</h4>
-							 <ul class="menu-drop">
-							<li class="item1"><a href="#">Men </a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
-							</li>
-							<li class="item2"><a href="#">Women </a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
-							</li>
-							<li class="item3"><a href="#">Kids</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-							<li class="item4"><a href="#">Accessories</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-									
-							<li class="item4"><a href="#">Shoes</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				<!--initiate accordion-->
-						<script type="text/javascript">
-							$(function() {
-							    var menu_ul = $('.menu-drop > li > ul'),
-							           menu_a  = $('.menu-drop > li > a');
-							    menu_ul.hide();
-							    menu_a.click(function(e) {
-							        e.preventDefault();
-							        if(!$(this).hasClass('active')) {
-							            menu_a.removeClass('active');
-							            menu_ul.filter(':visible').slideUp('normal');
-							            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-							        } else {
-							            $(this).removeClass('active');
-							            $(this).next().stop(true,true).slideUp('normal');
-							        }
-							    });
-							
-							});
-						</script>
-<!--//menu-->
-					 <!---->
-						
-
-</div>
 	</div>
 
 

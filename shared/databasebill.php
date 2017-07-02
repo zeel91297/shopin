@@ -26,7 +26,13 @@ class billdb{
         }
         public function getTotal($id){
             $con=billdb::connect();
+<<<<<<< HEAD
             $sql="select p.*,c.*,b.*,d.* from product_tbl p,cart_tbl c,cat_tbl b,bill_tbl d where p.prod_id=c.fk_product_id AND p.fk_cat_id=b.pk_cat_id AND d.fk_prod_id=p.prod_id";
+=======
+            //$sql="select p.*,c.*,b.*,d.* from product_tbl p,cart_tbl c,cat_tbl b,bill_tbl d where p.prod_id=c.fk_product_id AND p.fk_cat_id=b.pk_cat_id AND d.fk_prod_id=p.prod_id AND d.bill_no=".$id;
+            $sql="select b.* from user_tbl u,product_tbl p,bill_tbl b where p.prod_id=b.fk_prod_id AND u.pk_email_id=b.fk_email_id AND b.fk_email_id=".$id;
+            echo $sql;
+>>>>>>> b9b1e9193e745709e50eb391c4533e96173fadf9
             $result=$con->query($sql);
             billdb::disconnect();
             return $result;

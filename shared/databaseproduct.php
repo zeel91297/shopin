@@ -1,13 +1,13 @@
 <?php
     class productdb{
-        private static $con=null;
+        private static $conn=null;
         public static function connect(){
-            self::$con=mysqli_connect('localhost','root','','project_db');
-            return self::$con;
+            self::$conn=mysqli_connect('localhost','root','','project_db');
+            return self::$conn;
         }
         public static function disconnect(){
-            mysqli_close(self::$con);
-            self::$con=NULL;
+            mysqli_close(self::$conn);
+            self::$conn=NULL;
         }
         public function productdisplay(){
             $conn=productdb::connect();
@@ -58,6 +58,13 @@
             $result=$conn->query($sql);
             productdb::disconnect();
             return $result;
+        }
+        public function productdetail($product_id){
+            $conn=productdb::connect();
+            $sql="select p.*,c.* from product_tbl p,cat_tbl c where p.fk_cat_id=c.pk_cat_id AND prod_id='".$product_id."'";
+            $res=$conn->query($sql);          
+            return $res;
+            productdb::disconnect();
         }
     }
 ?>

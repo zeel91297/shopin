@@ -4,10 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE html>
-<?php
-    $_proid=$_GET["pro_id"];
-?>
+
 <html>
 <head>
 <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
@@ -15,12 +14,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--banner-->
 <?php
     include 'user_navbar.php';
+	 $_proid=$_GET["pro_id"];
 ?>
 <div class="banner-top">
 	<div class="container">
 		<h1>Single</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Single</h2>
+		<h2><a href="../visiter/home.php">Home</a><label>/</label>Single</h2>
 	</div>
 </div>
 
@@ -40,15 +40,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			        <div class="thumb-image"> <img src="<?php echo $row["prod_img1"]; ?>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			    <li data-thumb="images/si1.jpg">
-			         <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			         <div class="thumb-image"> <img src="<?php echo $row["prod_img2"]; ?>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			    <li data-thumb="images/si2.jpg">
-			       <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			       <div class="thumb-image"> <img src="<?php echo $row["prod_img3"]; ?>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
 		</div>
 	</div>	
 <div class="col-md-7 single-top-in">
+
 						<div class="span_2_of_a1 simpleCart_shelfItem">
 				<h3><?php echo $row["prod_name"]; ?></h3>
 			    <div class="price_single">
@@ -61,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <div class="quantity"> 
 								<div class="quantity-select">                           
 									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
+									<div class="entry value"<span>1</span></div>
 									<div class="entry value-plus active">&nbsp;</div>
 								</div>
 							</div>
@@ -79,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!--quantity-->
 				 
-			    <a href="#" class="add-to item_add hvr-skew-backward">Add to cart</a>
+			    <a href="cart_dis_code.php?pro_id=<?php echo $row["prod_id"];?>" class="add-to item_add hvr-skew-backward" >Add to Cart</a>
 			<div class="clearfix"> </div>
 			</div>
 		
@@ -262,94 +263,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div class="clearfix"> </div>
 	</div>
-	
-			<!--brand-->
-		<div class="container">
-			<div class="brand">
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic1.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic2.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic3.png" class="img-responsive" alt="">
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			</div>
-			<!--//brand-->
-		</div>	
-		
-	<!--//content-->
-		<!--//footer-->
-	<div class="footer">
-	<div class="footer-middle">
-				<div class="container">
-					<div class="col-md-3 footer-middle-in">
-						<a href="index.html"><img src="images/log.png" alt=""></a>
-						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-					</div>
-					
-					<div class="col-md-3 footer-middle-in">
-						<h6>Information</h6>
-						<ul class=" in">
-							<li><a href="404.html">About</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="contact.html">Site Map</a></li>
-						</ul>
-						<ul class="in in1">
-							<li><a href="#">Order History</a></li>
-							<li><a href="wishlist.html">Wish List</a></li>
-							<li><a href="login.html">Login</a></li>
-						</ul>
-						<div class="clearfix"></div>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Tags</h6>
-						<ul class="tag-in">
-							<li><a href="#">Lorem</a></li>
-							<li><a href="#">Sed</a></li>
-							<li><a href="#">Ipsum</a></li>
-							<li><a href="#">Contrary</a></li>
-							<li><a href="#">Chunk</a></li>
-							<li><a href="#">Amet</a></li>
-							<li><a href="#">Omnis</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Newsletter</h6>
-						<span>Sign up for News Letter</span>
-							<form>
-								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-								<input type="submit" value="Subscribe">	
-							</form>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<div class="container">
-					<ul class="footer-bottom-top">
-						<li><a href="#"><img src="images/f1.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
-					</ul>
-					<p class="footer-class">&copy; 2016 Shopin. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<!--//footer-->
-<script src="js/imagezoom.js"></script>
+</form>
+<?php
+include 'footer.php';
+?>	
+<script src="../js/imagezoom.js"></script>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script defer src="js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<script defer src="../js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
 
 <script>
 // Can also be used with $(document).ready()
@@ -361,9 +283,9 @@ $(window).load(function() {
 });
 </script>
 
-	<script src="js/simpleCart.min.js"> </script>
+	<script src="../js/simpleCart.min.js"> </script>
 <!-- slide -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 
 </body>

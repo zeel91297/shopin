@@ -15,6 +15,14 @@ class cart
         mysqli_close(self::$con);
         self::$con=null;
     }
+    public function display1()
+    {
+        $con=cart::connect();
+        $sql="select p.*,c.* from product_tbl p,cart_tbl c where p.prod_id=c.fk_product_id ";
+        $result=$con->query($sql);
+        return $result;
+        cart::disconnect();
+    }
 
     public function display()
     {
@@ -32,6 +40,26 @@ class cart
         $result=$con->query($sql);
         return $result;
         cart::disconnect();   
+    }
+
+    public function cart_update($qty,$cart_id)
+    {
+        $con=cart::connect();
+        $sql="update  cart_tbl set cart_qty='".$qty."'where cart_id='".$cart_id."'";
+        $result=$con->query($sql);
+        return $result;
+        cart::disconnect();
+    }
+
+
+    public function delete($_cart_id)
+    {
+        $con=cart::connect();
+        $sql="delete from cart_tbl where cart_id=".$_cart_id;
+        $result=$con->query($sql);
+
+        return $result;
+        cart::disconnect();  
     }
 }
 

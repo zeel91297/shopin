@@ -24,7 +24,7 @@
                 }
                 else
                 {
-                    header('location:products.php');
+                    header('location:../admin/products.php');
                 }
                  
             }

@@ -9,7 +9,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $_prodsoh=$_POST["txtpsoh"];
     $_proddesc=$_POST["txtdesc"];
     $_fk_catid=$_POST["fk_cat_id"];
-    echo $_fk_catid;
     $_pimg1="../images/".basename($_FILES["txtpimg1"]["name"]);
     move_uploaded_file($_FILES["txtpimg1"]["tmp_name"],$_pimg1);
     $_pimg2="hi";

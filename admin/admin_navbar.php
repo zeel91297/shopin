@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
-					<a href="user_disp.php"><?php echo $_SESSION["userid"] ?></a>
+					<a href="../user/user_disp.php"><?php echo $_SESSION["userid"] ?></a>
 				</div>
 				
 			<div class="col-sm-5 header-social">		

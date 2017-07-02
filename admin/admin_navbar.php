@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
@@ -44,6 +47,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+<?php
+
+?>
 <div class="header">
 <div class="container">
 		<div class="head">
@@ -55,11 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul >
-						<li><a href="login.html">Login</a></li>
-						<li><a href="register.html">Register</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
-					</ul>
+					<a href="user_disp.php"><?php echo $_SESSION["userid"] ?></a>
 				</div>
 				
 			<div class="col-sm-5 header-social">		
@@ -221,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>							
 						</div>
 						<div class="col1 col5">
-						<img src="../images/me1.png" class="img-responsive" alt="">
+						<img src="images/me1.png" class="img-responsive" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>                  
